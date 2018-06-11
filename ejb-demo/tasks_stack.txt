@@ -2,9 +2,9 @@
 [Mindau] JPA Persistent Entities befüllen und auslesen
 [Kerim] EJB zu EJB-Aufrufe
 [Kerim] „Illustration“ von EJB-Lebenszyklen durch passende Konsole-Ausgaben
-[] Transaktionen in EJBs
-[] EJB Interceptors
 [Kei] EJB Security
-[] EJB & JMS
 [Kei] EJB & SOAP/WSDL Web Service
+[Samuel] Transaktionen in EJBs
+[Samuel] EJB Interceptors
+[] EJB & JMS
 [] Ihre eigene EJB-Demo-Idee
