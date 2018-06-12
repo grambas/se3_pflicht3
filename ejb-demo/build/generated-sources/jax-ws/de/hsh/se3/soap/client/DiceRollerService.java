@@ -1,7 +1,6 @@
 
-package de.hsh.se3.soap.client.generated;
+package de.hsh.se3.soap.client;
 
-import de.hsh.se3.soap.client.*;
 import javax.jws.WebMethod;
 import javax.jws.WebResult;
 import javax.jws.WebService;

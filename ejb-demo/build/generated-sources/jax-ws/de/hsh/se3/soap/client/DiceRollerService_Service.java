@@ -1,7 +1,6 @@
 
-package de.hsh.se3.soap.client.generated;
+package de.hsh.se3.soap.client;
 
-import de.hsh.se3.soap.client.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import javax.xml.namespace.QName;

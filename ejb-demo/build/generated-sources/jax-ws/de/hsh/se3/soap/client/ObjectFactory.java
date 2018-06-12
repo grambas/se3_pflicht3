@@ -1,7 +1,6 @@
 
-package de.hsh.se3.soap.client.generated;
+package de.hsh.se3.soap.client;
 
-import de.hsh.se3.soap.client.*;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlElementDecl;
 import javax.xml.bind.annotation.XmlRegistry;
