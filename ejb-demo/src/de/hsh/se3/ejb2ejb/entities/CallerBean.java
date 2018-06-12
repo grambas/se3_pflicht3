@@ -27,4 +27,8 @@ public class CallerBean implements Caller {
     public void sendAttr2CalledBean(){
         calledBean.setAttribute(attribute);
     }
+    
+    public Called getCalledBean(){
+    return this.calledBean;
+    }
 }

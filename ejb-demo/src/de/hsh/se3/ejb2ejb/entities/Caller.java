@@ -5,8 +5,6 @@
  */
 package de.hsh.se3.ejb2ejb.entities;
 
-import javax.ejb.Local;
-
 /**
  *
  * @author Pyterion
@@ -14,4 +12,5 @@ import javax.ejb.Local;
 public interface Caller {
     public void setAttribute(String attr);
     public void sendAttr2CalledBean();
+    public Called getCalledBean();
 }

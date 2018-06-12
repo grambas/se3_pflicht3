@@ -5,7 +5,6 @@
  */
 package de.hsh.se3.ejb2ejb.client;
 
-import de.hsh.se3.ejb2ejb.entities.Called;
 import de.hsh.se3.ejb2ejb.entities.Caller;
 import java.util.Properties;
 import javax.naming.Context;
@@ -22,11 +21,10 @@ public class Ejb2EjbClient {
         Context jndiContext = new InitialContext(prop);
         
         Caller caller = (Caller) jndiContext.lookup(Caller.class.getName());
-        Called called = (Called) jndiContext.lookup(Called.class.getName());
         
         caller.setAttribute("testAttribute");
         caller.sendAttr2CalledBean();
-        String recAttribute = called.getAttribute();
+        String recAttribute = caller.getCalledBean().getAttribute();
         
         System.out.println(recAttribute);
     }
