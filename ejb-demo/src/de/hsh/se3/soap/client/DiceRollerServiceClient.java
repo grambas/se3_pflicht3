@@ -26,8 +26,8 @@ public class DiceRollerServiceClient {
     }
 
     private static int rollDice() {
-        de.hsh.se3.soap.client.DiceRollerService_Service service = new de.hsh.se3.soap.client.DiceRollerService_Service();
-        de.hsh.se3.soap.client.DiceRollerService port = service.getDiceRollerServicePort();
+        de.hsh.se3.soap.client.generated.DiceRollerService_Service service = new de.hsh.se3.soap.client.generated.DiceRollerService_Service();
+        de.hsh.se3.soap.client.generated.DiceRollerService port = service.getDiceRollerServicePort();
         return port.rollDice();
     }
  
