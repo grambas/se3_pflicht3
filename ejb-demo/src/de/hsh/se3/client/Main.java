@@ -18,22 +18,25 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         ClientFactory factory = new ClientFactory();
         while (true) {
+            for(int k : factory.CLIENTS.keySet()) {
+                System.out.println(k + ": " + factory.CLIENTS.get(k));
+            }
+            
             System.out.print("Enter from 1 to "+factory.CLIENTS.size() +" ('z' to exit):");
             String str = scanner.nextLine();
-            int input = Integer.parseInt(str);
-
-            Client demo = factory.getClient(input);
-
-            System.out.println("\n************** BEGIN " + factory.CLIENTS.get(input) + "DEMONSTRATION **************\n");
-
-            demo.demonstrate();
-
-            System.out.println("\n************** END " + factory.CLIENTS.get(input) + "DEMONSTRATION **************\n");
-
             if ("z".equalsIgnoreCase(str)) {
                 System.out.println("Bye!");
                 break;
             }
+            int input = Integer.parseInt(str);
+
+            Client demo = factory.getClient(input);
+
+            System.out.println("\n************** BEGIN " + factory.CLIENTS.get(input) + " DEMONSTRATION **************\n");
+
+            demo.demonstrate();
+
+            System.out.println("\n************** END " + factory.CLIENTS.get(input) + " DEMONSTRATION **************\n");
         }
     }
 }

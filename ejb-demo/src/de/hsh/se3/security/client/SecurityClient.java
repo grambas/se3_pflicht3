@@ -5,6 +5,7 @@
  */
 package de.hsh.se3.security.client;
 
+import de.hsh.se3.client.Client;
 import de.hsh.se3.security.Admin;
 import de.hsh.se3.security.User;
 import java.util.Properties;
@@ -12,8 +13,9 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 
 
-public class SecurityClient {
+public class SecurityClient implements Client {
     
+    @Override
     public void demonstrate() throws Exception {
         Properties prop = new Properties();
         Context jndiContext = new InitialContext(prop);

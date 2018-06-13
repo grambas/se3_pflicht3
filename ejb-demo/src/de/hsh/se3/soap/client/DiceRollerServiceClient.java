@@ -5,9 +5,12 @@
  */
 package de.hsh.se3.soap.client;
 
+import de.hsh.se3.client.Client;
 
-public class DiceRollerServiceClient {
+
+public class DiceRollerServiceClient implements Client {
     
+    @Override
     public void demonstrate() throws Exception {
         System.out.println("Rolling dice: " + rollDice());
         Thread.sleep(1000);

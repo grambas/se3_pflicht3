@@ -1,6 +1,8 @@
 package de.hsh.se3.client;
 
 import de.hsh.se3.jpaPersistent.client.JpaPersistentClient;
+import de.hsh.se3.security.client.SecurityClient;
+import de.hsh.se3.soap.client.DiceRollerServiceClient;
 import de.hsh.se3.transaction.client.TransactionClient;
 import java.util.HashMap;
 import java.util.Map;
@@ -37,11 +39,11 @@ public class ClientFactory {
       }else if(number == 4){
           return new JpaPersistentClient();
       }else if(number == 5){
-          return null;//TODO security client
+          return new SecurityClient();
       }else if(number == 6){
           return new TransactionClient();
       }else if(number == 7){
-          return null;//TODO SOAP client
+          return new DiceRollerServiceClient();
       }else if(number == 8){
           return null;//TODO 2 session beans? client
       }
