@@ -17,6 +17,8 @@ import javax.ejb.Stateful;
 @Remote(_Stateful.class)
 public class _StatefulBean implements _Stateful {
 
+    public int number = 0;
+    
     @Override
     public void doAnything(){
     System.out.println("Stateful: Doing anything..");
@@ -29,5 +31,15 @@ public class _StatefulBean implements _Stateful {
         @PreDestroy
     public void destroyedInfo(){
     System.out.println("The Stateful Bean has been destroyed.");
+    }
+
+    @Override
+    public void increment() {
+        number++;
+    }
+
+    @Override
+    public int getNumber() {
+        return number;
     }
 }

@@ -11,4 +11,6 @@ package de.hsh.se3.ejbLifecycle.entities;
  */
 public interface _Stateful {
     public void doAnything();
+    public void increment();
+    public int getNumber();
 }
