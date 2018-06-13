@@ -8,6 +8,8 @@ import javax.ejb.Remote;
  */
 @Remote
 public interface MoneyTransfer {
+
     public String transferMoney();
+
     public String addMoneyToDestination();
 }

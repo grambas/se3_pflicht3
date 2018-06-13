@@ -15,12 +15,11 @@ import javax.ejb.TransactionManagementType;
 @TransactionManagement(TransactionManagementType.CONTAINER)
 @Remote(MoneyTransfer.class)
 public class MoneyTransferBean implements MoneyTransfer {
-    
 
     @TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
     @Override
     public String transferMoney() {
-        String result ="";
+        String result = "";
         result += deductMoneyFromSource();
         result += addMoneyToDestination();
         return result;
@@ -34,6 +33,6 @@ public class MoneyTransferBean implements MoneyTransfer {
     @TransactionAttribute(TransactionAttributeType.MANDATORY)
     @Override
     public String addMoneyToDestination() {
-        return"addMoneyToDestination()  executed";
+        return "addMoneyToDestination()  executed";
     }
 }

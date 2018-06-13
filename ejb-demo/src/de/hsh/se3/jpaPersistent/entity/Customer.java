@@ -15,12 +15,12 @@ import javax.persistence.Table;
 
 /**
  * Simple entity with name and id
+ *
  * @author mindau
  */
-
-@NamedQuery(name="findAllCustomers",query="SELECT c FROM Customer c")
+@NamedQuery(name = "findAllCustomers", query = "SELECT c FROM Customer c")
 @Entity
-@Table(name="customers")
+@Table(name = "customers")
 public class Customer implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -36,13 +36,13 @@ public class Customer implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    } 
-    
+    }
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }    
+    }
 }

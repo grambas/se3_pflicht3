@@ -6,15 +6,15 @@ import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-    
+
 /**
- * 
+ *
  * @author mindau
  */
-
 @Stateless
 @Remote(Repository.class)
 public class RepositoryBean implements Repository {
+
     //Inject Entitymanager
     @PersistenceContext
     private EntityManager em;
@@ -26,18 +26,17 @@ public class RepositoryBean implements Repository {
         customer.setName(name);
         em.persist(customer);
         em.flush();
-        
 
     }
-    
+
     /**
-     * Simple method witch returns all customers in Database
-     * using named JP-QL query. Query is defined in Customer 
-     * entity
-     * @return 
+     * Simple method witch returns all customers in Database using named JP-QL
+     * query. Query is defined in Customer entity
+     *
+     * @return
      */
     @Override
     public List<Customer> getAllCustomers() {
-       return em.createNamedQuery("findAllCustomers").getResultList();
+        return em.createNamedQuery("findAllCustomers").getResultList();
     }
 }
