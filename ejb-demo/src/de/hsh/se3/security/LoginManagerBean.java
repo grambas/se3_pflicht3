@@ -5,10 +5,7 @@
  */
 package de.hsh.se3.security;
 
-import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;
-import javax.ejb.Stateless;
-import javax.ejb.LocalBean;
 import javax.ejb.Singleton;
 
 

@@ -5,6 +5,7 @@
  */
 package de.hsh.se3.ejb2ejb.client;
 
+import de.hsh.se3.client.Client;
 import de.hsh.se3.ejb2ejb.entities.Caller;
 import java.util.Properties;
 import javax.naming.Context;
@@ -15,8 +16,10 @@ import javax.naming.NamingException;
  *
  * @author Pyterion
  */
-public class Ejb2EjbClient {
-    public static void main(String[] args) throws NamingException{
+public class Ejb2EjbClient implements Client {
+    
+    @Override
+    public void demonstrate() throws Exception {
         Properties prop = new Properties();
         Context jndiContext = new InitialContext(prop);
         
@@ -26,6 +29,11 @@ public class Ejb2EjbClient {
         caller.sendAttr2CalledBean();
         String recAttribute = caller.getCalledBean().getAttribute();
         
-        System.out.println(recAttribute);
+        System.out.println(recAttribute);    }
+    
+    public static void main(String[] args) throws NamingException, Exception{
+        new Ejb2EjbClient().demonstrate();
     }
+
+
 }

@@ -5,6 +5,7 @@
  */
 package de.hsh.se3.session.client;
 
+import de.hsh.se3.client.Client;
 import de.hsh.se3.ejbLifecycle.entities._Singleton;
 import de.hsh.se3.ejbLifecycle.entities._Stateful;
 import de.hsh.se3.ejbLifecycle.entities._Stateless;
@@ -17,9 +18,10 @@ import javax.naming.NamingException;
  *
  * @author acer
  */
-public class SessionClient {
-    public static void main(String[] args) throws NamingException{
+public class SessionClient implements Client{
     
+    @Override
+    public void demonstrate() throws Exception {
         Properties prop = new Properties();
         Context jndiContext = new InitialContext(prop);
         
@@ -34,6 +36,11 @@ public class SessionClient {
         System.out.println("Stateful Vorher: " + stateful.getNumber());
         stateful.increment();
         _Stateful stateful1 = (_Stateful) jndiContext.lookup(_Stateful.class.getName());
-        System.out.println("Stateful Nachher: " + stateful1.getNumber());
+        System.out.println("Stateful Nachher: " + stateful1.getNumber());    }
+    
+    public static void main(String[] args) throws NamingException, Exception{
+        new SessionClient().demonstrate();
     }
+
+
 }

@@ -5,6 +5,7 @@
  */
 package de.hsh.se3.interceptor.client;
 
+import de.hsh.se3.client.Client;
 import de.hsh.se3.interceptor.Interceptor;
 import de.hsh.se3.interceptor.SayHello;
 import java.util.Properties;
@@ -16,12 +17,17 @@ import javax.naming.NamingException;
  *
  * @author acer
  */
-public class InterceptorClient {
-    public static void main(String[] args) throws NamingException {
+public class InterceptorClient implements Client {
+    @Override
+    public void demonstrate() throws NamingException{
         Properties prop = new Properties();
         Context jndiContext = new InitialContext(prop);
         
         SayHello sayHello = (SayHello) jndiContext.lookup(SayHello.class.getName());
         System.out.println(sayHello.sayHello());
+    }
+    public static void main(String[] args) throws NamingException {
+       InterceptorClient client = new InterceptorClient();
+       client.demonstrate();
     }
 }

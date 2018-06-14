@@ -27,7 +27,7 @@ public class MoneyTransferBean implements MoneyTransfer {
 
     @TransactionAttribute(TransactionAttributeType.MANDATORY)
     public String deductMoneyFromSource() {
-        return "\ndeductMoneyFromSource() exwcuted\n";
+        return "\ndeductMoneyFromSource() executed\n";
     }
 
     @TransactionAttribute(TransactionAttributeType.MANDATORY)

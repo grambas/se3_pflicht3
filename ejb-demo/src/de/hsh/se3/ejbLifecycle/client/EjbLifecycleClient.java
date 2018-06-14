@@ -5,6 +5,7 @@
  */
 package de.hsh.se3.ejbLifecycle.client;
 
+import de.hsh.se3.client.Client;
 import de.hsh.se3.ejbLifecycle.entities._Singleton;
 import de.hsh.se3.ejbLifecycle.entities._Stateful;
 import de.hsh.se3.ejbLifecycle.entities._Stateless;
@@ -17,10 +18,11 @@ import javax.naming.NamingException;
  *
  * @author Pyterion
  */
-public class EjbLifecycleClient {
- 
-    public static void main(String[] args) throws NamingException{
+public class EjbLifecycleClient implements Client{
     
+    
+     @Override
+    public void demonstrate() throws Exception {
         Properties prop = new Properties();
         Context jndiContext = new InitialContext(prop);
         
@@ -35,6 +37,13 @@ public class EjbLifecycleClient {
         stateless.doAnything();
         
         System.out.println("Using Singleton Bean...");
-        singleton.doAnything();
+        singleton.doAnything();    }
+    
+    
+    public static void main(String[] args) throws NamingException, Exception{
+        new EjbLifecycleClient().demonstrate();
+
     }
+
+
 }
