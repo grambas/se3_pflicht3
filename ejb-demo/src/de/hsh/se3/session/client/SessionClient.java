@@ -28,15 +28,19 @@ public class SessionClient implements Client{
         _Stateful stateful = (_Stateful) jndiContext.lookup(_Stateful.class.getName());
         _Stateless stateless = (_Stateless) jndiContext.lookup(_Stateless.class.getName());
                
-        System.out.println("Stateless Vorher: " + stateless.getNumber());
+        System.out.println("Erstes StatelessBean Vorher: " + stateless.getNumber());
         stateless.increment();
+        System.out.println("ErstesStatelessBean Nachher: " + stateless.getNumber());
         _Stateless stateless1 = (_Stateless) jndiContext.lookup(_Stateless.class.getName());
-        System.out.println("Stateless Nachher: " + stateless1.getNumber());
+        System.out.println("Zweites StatelessBean: " + stateless1.getNumber());
+        System.out.println();
         
-        System.out.println("Stateful Vorher: " + stateful.getNumber());
+        System.out.println("Erstes StatefulBean Vorher: " + stateful.getNumber());
         stateful.increment();
+        System.out.println("Erstes StatefulBean Nachher: " + stateful.getNumber());
         _Stateful stateful1 = (_Stateful) jndiContext.lookup(_Stateful.class.getName());
-        System.out.println("Stateful Nachher: " + stateful1.getNumber());    }
+        System.out.println("Zweites StatefulBean: " + stateful1.getNumber());
+    }
     
     public static void main(String[] args) throws NamingException, Exception{
         new SessionClient().demonstrate();
