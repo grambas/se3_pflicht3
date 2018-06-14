@@ -36,15 +36,5 @@ public class EjbLifecycleClient {
         
         System.out.println("Using Singleton Bean...");
         singleton.doAnything();
-        
-        System.out.println("Stateless Vorher: " + stateless.getNumber());
-        stateless.increment();
-        _Stateless stateless1 = (_Stateless) jndiContext.lookup(_Stateless.class.getName());
-        System.out.println("Stateless Nachher: " + stateless1.getNumber());
-        
-        System.out.println("Stateful Vorher: " + stateful.getNumber());
-        stateful.increment();
-        _Stateful stateful1 = (_Stateful) jndiContext.lookup(_Stateful.class.getName());
-        System.out.println("Stateful Nachher: " + stateful1.getNumber());
     }
 }
