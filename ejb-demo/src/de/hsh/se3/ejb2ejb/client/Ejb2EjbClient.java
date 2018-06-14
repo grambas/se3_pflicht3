@@ -17,23 +17,23 @@ import javax.naming.NamingException;
  * @author Pyterion
  */
 public class Ejb2EjbClient implements Client {
-    
+
     @Override
     public void demonstrate() throws Exception {
         Properties prop = new Properties();
         Context jndiContext = new InitialContext(prop);
-        
+
         Caller caller = (Caller) jndiContext.lookup(Caller.class.getName());
-        
+
         caller.setAttribute("testAttribute");
         caller.sendAttr2CalledBean();
         String recAttribute = caller.getCalledBean().getAttribute();
-        
-        System.out.println(recAttribute);    }
-    
-    public static void main(String[] args) throws NamingException, Exception{
-        new Ejb2EjbClient().demonstrate();
+
+        System.out.println(recAttribute);
     }
 
+    public static void main(String[] args) throws NamingException, Exception {
+        new Ejb2EjbClient().demonstrate();
+    }
 
 }

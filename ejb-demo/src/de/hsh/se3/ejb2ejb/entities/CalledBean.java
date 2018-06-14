@@ -15,15 +15,16 @@ import javax.ejb.Stateful;
 @Stateful
 @Remote(Called.class)
 public class CalledBean implements Called {
+
     private String attribute;
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
-    
-    public void setAttribute(String attr){
-        this.attribute=attr;
+
+    public void setAttribute(String attr) {
+        this.attribute = attr;
     }
-    
-    public String getAttribute(){
-    return this.attribute;
+
+    public String getAttribute() {
+        return this.attribute;
     }
 }

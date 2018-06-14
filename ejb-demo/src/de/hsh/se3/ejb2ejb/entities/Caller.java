@@ -10,7 +10,10 @@ package de.hsh.se3.ejb2ejb.entities;
  * @author Pyterion
  */
 public interface Caller {
+
     public void setAttribute(String attr);
+
     public void sendAttr2CalledBean();
+
     public Called getCalledBean();
 }

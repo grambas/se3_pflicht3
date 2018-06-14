@@ -19,16 +19,17 @@ import javax.ejb.Singleton;
 public class _SingletonBean implements _Singleton {
 
     @Override
-    public void doAnything(){
-    System.out.println("Singleton: Doing anything..");
+    public void doAnything() {
+        System.out.println("Singleton: Doing anything..");
     }
+
     @PostConstruct
-    public void constructedInfo(){
-    System.out.println("The Singleton Bean has been created.");
+    public void constructedInfo() {
+        System.out.println("The Singleton Bean has been created.");
     }
-    
+
     @PreDestroy
-    public void destroyedInfo(){
-    System.out.println("The Singleton Bean has been destroyed.");
+    public void destroyedInfo() {
+        System.out.println("The Singleton Bean has been destroyed.");
     }
 }

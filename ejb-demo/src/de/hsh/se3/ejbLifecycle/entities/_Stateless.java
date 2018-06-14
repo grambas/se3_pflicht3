@@ -10,7 +10,10 @@ package de.hsh.se3.ejbLifecycle.entities;
  * @author Pyterion
  */
 public interface _Stateless {
+
     public void doAnything();
+
     public void increment();
+
     public int getNumber();
 }

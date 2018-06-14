@@ -17,28 +17,29 @@ import javax.ejb.Stateless;
 @Stateless
 @Remote(_Stateless.class)
 public class _StatelessBean implements _Stateless {
-    
+
     public int number = 0;
 
     @Override
-    public void doAnything(){
-    System.out.println("Stateless: Doing anything..");
+    public void doAnything() {
+        System.out.println("Stateless: Doing anything..");
     }
+
     @PostConstruct
-    public void constructedInfo(){
-    System.out.println("The Stateless Bean has been created.");
+    public void constructedInfo() {
+        System.out.println("The Stateless Bean has been created.");
     }
-    
-        @PreDestroy
-    public void destroyedInfo(){
-    System.out.println("The Stateless Bean has been destroyed.");
+
+    @PreDestroy
+    public void destroyedInfo() {
+        System.out.println("The Stateless Bean has been destroyed.");
     }
 
     @Override
     public void increment() {
         number++;
     }
-    
+
     @Override
     public int getNumber() {
         return number;

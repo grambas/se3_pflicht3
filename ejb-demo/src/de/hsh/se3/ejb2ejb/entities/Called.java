@@ -12,6 +12,8 @@ import javax.ejb.Local;
  * @author Pyterion
  */
 public interface Called {
+
     public void setAttribute(String attr);
+
     public String getAttribute();
 }
